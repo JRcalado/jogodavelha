@@ -18,7 +18,9 @@ defmodule Jogodavelha.Jogo do
        Agent.get(__MODULE__, & &1)
     end
 
-    def increment do
-      Agent.update(__MODULE__, &(&1 + 1))
-    end
+   def buscaStruct(key,key_interna) do
+     Map.get(value(),key)
+     |> Map.get(key_interna)
+
+   end
 end
