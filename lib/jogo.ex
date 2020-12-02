@@ -23,4 +23,5 @@ defmodule Jogodavelha.Jogo do
      |> Map.get(key_interna)
 
    end
+
 end
