@@ -1,5 +1,5 @@
 defmodule Jogodavelha do
-  alias Jogodavelha.{Jogo, Display}
+  alias Jogodavelha.{Jogo, Display, Action}
   def inicia do
     Jogo.start()
     Jogo.value()
@@ -20,6 +20,12 @@ defmodule Jogodavelha do
     IO.puts(out)
     IO.puts('__')
 
+  end
+
+
+  def jogada(position) do
+    jogador = "jogador1"
+    Action.jogadas(jogador,position)
   end
 
 

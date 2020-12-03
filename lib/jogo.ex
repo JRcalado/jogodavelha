@@ -24,4 +24,8 @@ defmodule Jogodavelha.Jogo do
 
    end
 
+   def update(key) do
+    Agent.update(__MODULE__,&Map.put(&1,key,[9,3,4]))
+   end
+
 end

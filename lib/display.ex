@@ -18,14 +18,15 @@ defmodule Jogodavelha.Display do
 
 
    def update(key) do
-    Agent.update(__MODULE__,&Map.put(&1,key,[1,3,4]))
+    Agent.update(__MODULE__,&Map.put(&1,key,[9,3,4]))
    end
 
     def display do
-      IO.puts("\n--- Escolha a jogada---\n")
+      IO.puts("\n--- Escolha a jogada ---\n")
       [Map.get(value(),:row1),Map.get(value(),:row2),Map.get(value(),:row3)]
-      |> Enum.each(&IO.inspect/1)
-      IO.puts("\n------")
+      |>Enum.each(fn n -> IO.inspect(n,charlists: :as_lists) end)
+      IO.puts("\n---  ---\n")
+
     end
 
 
