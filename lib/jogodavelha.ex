@@ -10,9 +10,10 @@ defmodule Jogodavelha do
   end
 
   def exibir do
-    Jogo.value()
-    |> Map.keys()
-    |> Enum.each(fn x -> Jogo.buscaStruct(x,:position) |> format_out()  end)
+    # Jogo.value()
+    # |> Map.keys()
+    # |> Enum.each(fn x -> Jogo.buscaStruct(x,:position) |> format_out()  end)
+
 
   end
 

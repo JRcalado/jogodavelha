@@ -25,7 +25,14 @@ defmodule Jogodavelha.Jogo do
    end
 
    def update(key) do
-    Agent.update(__MODULE__,&Map.put(&1,key,[9,3,4]))
+
+    key = "_" <> Integer.to_string(key) <> "_"
+
+   value()
+   |> Map.fetch!(String.to_atom(key))
+    # Agent.update(__MODULE__,&Map.put(&1,key,[9,3,4]))
    end
+
+
 
 end
