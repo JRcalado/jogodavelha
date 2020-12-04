@@ -24,13 +24,17 @@ defmodule Jogodavelha.Jogo do
 
    end
 
-   def update(key) do
+   def update(key,player,symbol) do
 
     key = "_" <> Integer.to_string(key) <> "_"
 
-   value()
+   position = value()
    |> Map.fetch!(String.to_atom(key))
-    # Agent.update(__MODULE__,&Map.put(&1,key,[9,3,4]))
+
+   %{position | player: player}
+   %{position | value: symbol}
+
+    Agent.update(__MODULE__,&Map.put(&1,key,position))
    end
 
 
