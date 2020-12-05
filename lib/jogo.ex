@@ -26,15 +26,20 @@ defmodule Jogodavelha.Jogo do
 
    def update(key,player,symbol) do
 
+      updateValue(key,:player,player)
+      updateValue(key,:value,symbol)
+   end
+
+   def updateValue(key,key_interna,value) do
     key = "_" <> Integer.to_string(key) <> "_"
 
-   position = value()
-   |> Map.fetch!(String.to_atom(key))
+    position = value()
+    |> Map.fetch!(String.to_atom(key))
 
-   %{position | player: player}
-   %{position | value: symbol}
+    Agent.update(__MODULE__, fn state ->
+        Map.replace!(state, String.to_atom(key),Map.replace!(position,key_interna, value))
 
-    Agent.update(__MODULE__,&Map.put(&1,key,position))
+    end)
    end
 
 
