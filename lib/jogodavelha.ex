@@ -1,16 +1,13 @@
 defmodule Jogodavelha do
   alias Jogodavelha.{Jogo, Display, Action, Jogadores}
 
-  @computer  "computador"
-  @computer_symbol  "X"
-  @player "voce"
-  @player_symbol  "Y"
 
   def inicia do
     Jogo.start()
     Jogo.value()
     Display.start()
     Display.display()
+    Action.start()
 
 
   end
@@ -31,14 +28,14 @@ defmodule Jogodavelha do
 
 
   def jogada(position) do
-    Action.jogadas(@player,@player_symbol,position)
+    Action.jogadaPlay(position)
 
     jogadaComputador()
     Display.displayTeste()
   end
 
   defp jogadaComputador() do
-    Action.jogadas(@computer,@computer_symbol,1)
+    Action.jogadaComputador()
   end
   def cria_jogador(name, symbol) do
     Jogadores.build(name,symbol)
