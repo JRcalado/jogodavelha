@@ -12,6 +12,9 @@ defmodule Jogodavelha.Action do
     Agent.update(__MODULE__,  &Map.put(&1, key, value))
   end
 
+  def delete(key) do
+    Agent.update(__MODULE__,  &Map.delete(&1, key))
+  end
 
   def value do
     Agent.get(__MODULE__, & &1)
@@ -35,7 +38,11 @@ defmodule Jogodavelha.Action do
   def verificaJogadas(jogada) do
    case jogada.value do
      nil -> update(jogada.position,jogada.position)
-     _ -> true
+     _ -> delete(jogada.position)
    end
+
+
+
+
   end
 end
