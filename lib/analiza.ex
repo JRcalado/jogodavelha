@@ -1,3 +1,0 @@
-defmodule Analiza do
-
-end

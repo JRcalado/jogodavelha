@@ -6,7 +6,7 @@ defmodule Jogodavelha do
     Jogo.start()
     Jogo.value()
     Display.start()
-    Display.display()
+    Display.displayJogo()
     Action.start()
 
 
@@ -31,7 +31,7 @@ defmodule Jogodavelha do
     Action.jogadaPlay(position)
 
     jogadaComputador()
-    Display.displayTeste()
+    Display.displayJogo()
   end
 
   defp jogadaComputador() do

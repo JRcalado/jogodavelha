@@ -4,9 +4,6 @@ defmodule Jogodavelha.Display do
 
     def start do
         initial = %{
-                  row1: [1,2,3],
-                  row2: [4,5,6],
-                  row3: [7,8,9],
                   _1_: 1,
                   _2_: 2,
                   _3_: 3,
@@ -74,7 +71,7 @@ defmodule Jogodavelha.Display do
 
     end
 
-    def displayTeste do
+    def displayJogo do
       IO.puts("\n--- Escolha a jogada ---\n")
       IO.puts("#{Map.get(value(),:_1_)} | #{Map.get(value(),:_2_)} | #{Map.get(value(),:_3_)}")
       IO.puts("#{Map.get(value(),:_4_)} | #{Map.get(value(),:_5_)} | #{Map.get(value(),:_6_)}")

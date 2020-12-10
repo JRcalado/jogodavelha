@@ -3,9 +3,9 @@ defmodule Jogodavelha.Action do
   alias Jogodavelha.{Display,Jogo}
 
   @computer  "computador"
-  @computer_symbol  "X"
+  @computer_symbol  "Y"
   @player "voce"
-  @player_symbol  "Y"
+  @player_symbol  "X"
 
   def start do
     initial  = %{}
