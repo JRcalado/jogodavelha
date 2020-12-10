@@ -4,7 +4,7 @@ defmodule Jogodavelha do
   @computer  "computador"
   @computer_symbol  "X"
   @player "voce"
-  @player_symbol  "O"
+  @player_symbol  "Y"
 
   def inicia do
     Jogo.start()
@@ -31,9 +31,15 @@ defmodule Jogodavelha do
 
 
   def jogada(position) do
-    Action.jogadas(@player,@computer_symbol,position)
+    Action.jogadas(@player,@player_symbol,position)
+
+    jogadaComputador()
+    Display.displayTeste()
   end
 
+  defp jogadaComputador() do
+    Action.jogadas(@computer,@computer_symbol,1)
+  end
   def cria_jogador(name, symbol) do
     Jogadores.build(name,symbol)
   end
