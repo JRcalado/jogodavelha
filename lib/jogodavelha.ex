@@ -1,5 +1,5 @@
 defmodule Jogodavelha do
-  alias Jogodavelha.{Jogo, Display, Action, Jogadores}
+  alias Jogodavelha.{Jogo, Display, Action, Jogadores, Analisa}
 
 
   def inicia do
@@ -8,6 +8,7 @@ defmodule Jogodavelha do
     Display.start()
     Display.displayJogo()
     Action.start()
+    Analisa.start()
 
 
   end
